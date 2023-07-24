@@ -47,7 +47,8 @@ TEAMS = (
     ('SEA', 'Seattle Seahawks'),
     ('TB', 'Tampa Bay Buccaneers'),
     ('TEN', 'Tennessee Titans'),
-    ('WAS', 'Washington Commanders')
+    ('WAS', 'Washington Commanders'),
+    ('FA', 'Free Agent')
 )
 
 class Player(models.Model):
