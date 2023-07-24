@@ -12,7 +12,6 @@ POSITIONS = (
 
 SCORING_TYPES = (
     ('STANDARD', 'STANDARD'),
-    ('HALF_PPR', 'HALF_PPR'),
     ('PPR', 'PPR')
 )
 
@@ -59,6 +58,7 @@ class Player(models.Model):
 
 class RankingSource(models.Model):
     ranking_src_name = models.CharField(max_length=30)
+    ranking_src_url = models.TextField()
     scoring_type = models.CharField(max_length=10, choices=SCORING_TYPES)
     players_count = models.IntegerField()
 

@@ -3,11 +3,13 @@ import json
 import requests
 import pandas as pd
 
-urls = ['https://www.fantasypros.com/nfl/rankings/consensus-cheatsheets.php', 'https://www.fantasypros.com/nfl/rankings/ppr-cheatsheets.php']
+sources = [
+    { 'url': 'https://www.fantasypros.com/nfl/rankings/consensus-cheatsheets.php', 'ppr': 0 }, 
+    { 'url':'https://www.fantasypros.com/nfl/rankings/ppr-cheatsheets.php', 'ppr': 1 }]
 
 def web_scrape():
-    for url in urls:    
-        text = requests.get(url).text
+    for source in sources:    
+        text = requests.get(source['url']).text
         data = re.search(r'ecrData = (.*);', text).group(1)
         data = json.loads(data)
 
@@ -21,4 +23,5 @@ def web_scrape():
         df = raw_df.drop(columns=column_list)
         df = df.rename(columns={"player_positions":"position", "player_team_id":"team", "rank_ecr":"rank"})
         df = df.iloc[lambda x: x.index < 100]
-        print(df)
+        source['df'] = df
+    return sources

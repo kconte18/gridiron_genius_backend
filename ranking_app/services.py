@@ -5,7 +5,8 @@ from .web_scrape import cbs, fantasypros, fftoday, footballguys, thescore
 
 def web_scrap_to_db():
     try:
-        fantasypros.web_scrape
+        rankings = fantasypros.web_scrape()
+        return rankings[0]['df']
     except:
         return "Nope"
     # obj = rb_df.head()
