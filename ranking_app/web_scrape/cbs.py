@@ -2,11 +2,11 @@ import requests
 import pandas as pd
 from bs4 import BeautifulSoup
 
-urls = ['https://www.cbssports.com/fantasy/football/rankings/', 'https://www.cbssports.com/fantasy/football/rankings/standard/top200/']
+sources = [{'url':'https://www.cbssports.com/fantasy/football/rankings/', 'ppr':1}, {'url':'https://www.cbssports.com/fantasy/football/rankings/standard/top200/', 'ppr':0}]
 
 def web_scrape():    
-    for url in urls:
-        r = requests.get(url)
+    for source in sources:
+        r = requests.get(source['url'])
         soup = BeautifulSoup(r.content, 'html.parser')
         s = soup.find('div', class_='experts-column')
         players = s.find_all('span', class_='player-name')
@@ -21,4 +21,5 @@ def web_scrape():
                 break
         ranking_data = {'player_name':player_name_list, 'rank':rank_list}
         df = pd.DataFrame(ranking_data)
-        print(df)
+        source['df'] = df
+    return sources
