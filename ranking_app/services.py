@@ -24,4 +24,8 @@ def web_scrap_to_db():
 
 def update_players():
     Player.objects.all().delete()
-    
+    player_df = pd.read_csv('ranking_app/data/players_2023.csv')
+    player_list = player_df.values.tolist()
+    for player in player_list:
+        new_player = Player(id= player[0], player_name= player[1], team= player[2], position=player[3], bye_week=player[4])
+        new_player.save()
