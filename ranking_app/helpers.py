@@ -6,7 +6,7 @@ def binary_search_for_player(players_dict, low, high, player):
         player_dict_name = players_dict[mid]['player_name']
 
         if player_dict_name.lower() == player.lower():
-            return players_dict[mid]
+            return players_dict[mid]['id']
  
         elif player_dict_name < player:
             low = mid + 1
