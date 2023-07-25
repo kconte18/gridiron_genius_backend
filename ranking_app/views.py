@@ -7,7 +7,7 @@ from . import services
 def refresh_ranking_db(request):
     data = services.web_scrap_to_db()
     print(data)
-    return HttpResponse(data)
+    return HttpResponse('it worked')
 
 def refresh_players_db(request):
     try:
