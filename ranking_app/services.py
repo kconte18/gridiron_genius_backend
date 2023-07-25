@@ -9,19 +9,16 @@ from .web_scrape import cbs, fantasypros, fftoday, footballguys, thescore
 
 def web_scrap_to_db():
     rankings = []
-    # try:
-    #     rankings.append(cbs.web_scrape())
-    #     # cbs_rankings = rankings[0]['df']
-    # except:
-    #     print("CBS Failed")
-    # try:
-        # rankings.append(fantasypros.web_scrape())
+    try:
+        rankings.append(cbs.web_scrape())
+        # cbs_rankings = rankings[0]['df']
+    except:
+        print("CBS Failed")
+    try:
+        rankings.append(fantasypros.web_scrape())
         # fantasypros_rankings = rankings[0]['df']
-    # except:
-        # print("Fantasy Pros Failed")
-
-    #  TEMP BELOW
-    rankings.append(fantasypros.web_scrape())
+    except:
+        print("Fantasy Pros Failed")
 
 def update_players():
     Player.objects.all().delete()
