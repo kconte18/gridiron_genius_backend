@@ -65,7 +65,6 @@ class RankingSource(models.Model):
     date = models.DateField()
     scoring_type = models.CharField(max_length=10, choices=SCORING_TYPES)
     position_ranking_type = models.CharField(max_length=7 ,choices=POSITION_RANKING_TYPES)
-    players_count = models.IntegerField()
 
 class Ranking(models.Model):
     ranking_src = models.ForeignKey(RankingSource, on_delete=models.CASCADE)
