@@ -10,6 +10,8 @@ POSITIONS = (
     ('K', 'Kicker'),
 )
 
+POSITION_RANKING_TYPES = POSITIONS + (('OVERALL', 'Overall'),)
+
 SCORING_TYPES = (
     ('STANDARD', 'STANDARD'),
     ('PPR', 'PPR')
@@ -62,6 +64,7 @@ class RankingSource(models.Model):
     ranking_src_url = models.TextField()
     date = models.DateField()
     scoring_type = models.CharField(max_length=10, choices=SCORING_TYPES)
+    position_ranking_type = models.CharField(max_length=7 ,choices=POSITION_RANKING_TYPES)
     players_count = models.IntegerField()
 
 class Ranking(models.Model):

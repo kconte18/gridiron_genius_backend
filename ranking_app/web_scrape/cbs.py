@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 from ranking_app.models import Player
 from ranking_app import helpers
 
-sources = [{'url':'https://www.cbssports.com/fantasy/football/rankings/', 'scoring_type': 'PPR'}, {'url':'https://www.cbssports.com/fantasy/football/rankings/standard/top200/', 'scoring_type': 'STANDARD'}]
+sources = [{'url':'https://www.cbssports.com/fantasy/football/rankings/', 'scoring_type': 'PPR', 'position': 'OVERALL'}, {'url':'https://www.cbssports.com/fantasy/football/rankings/standard/top200/', 'scoring_type': 'STANDARD', 'position':'OVERALL'}]
 
 def web_scrape(players_dict):    
     for source in sources:

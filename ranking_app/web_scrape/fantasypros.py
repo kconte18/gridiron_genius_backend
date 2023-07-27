@@ -5,7 +5,7 @@ import pandas as pd
 
 from .. import helpers
 
-sources = [{ 'url': 'https://www.fantasypros.com/nfl/rankings/consensus-cheatsheets.php', 'scoring_type': 'STANDARD' }, { 'url':'https://www.fantasypros.com/nfl/rankings/ppr-cheatsheets.php', 'scoring_type': 'PPR' }]
+sources = [{ 'url': 'https://www.fantasypros.com/nfl/rankings/consensus-cheatsheets.php', 'scoring_type': 'STANDARD', 'position': 'OVERALL' }, { 'url':'https://www.fantasypros.com/nfl/rankings/ppr-cheatsheets.php', 'scoring_type': 'PPR', 'position': 'OVERALL' }]
 
 def web_scrape(players_dict):
     for source in sources:    

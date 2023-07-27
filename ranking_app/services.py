@@ -11,9 +11,10 @@ def web_scrap_to_db():
     players_dict = Player.objects.all().values()
     try:
         cbs_rankings = cbs.web_scrape(players_dict)
-        for cbs_ranking in cbs_rankings:
-            print(cbs_rankings['url'])
-            print(cbs_ranking['scoring_type'])
+        for ranking in cbs_rankings:
+            print(ranking['url'])
+            print(ranking['scoring_type'])
+            print(ranking['position'])
     except Exception as error:
         print("CBS Failed: " + error)
     try:
