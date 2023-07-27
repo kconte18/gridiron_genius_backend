@@ -3,12 +3,11 @@ import json
 import requests
 import pandas as pd
 
-from ranking_app.models import Player
 from .. import helpers
 
-sources = [{ 'url': 'https://www.fantasypros.com/nfl/rankings/consensus-cheatsheets.php', 'ppr': 0 }, { 'url':'https://www.fantasypros.com/nfl/rankings/ppr-cheatsheets.php', 'ppr': 1 }]
+sources = [{ 'url': 'https://www.fantasypros.com/nfl/rankings/consensus-cheatsheets.php', 'scoring_type': 'STANDARD' }, { 'url':'https://www.fantasypros.com/nfl/rankings/ppr-cheatsheets.php', 'scoring_type': 'PPR' }]
 
-def web_scrape():
+def web_scrape(players_dict):
     for source in sources:    
         text = requests.get(source['url']).text
         data = re.search(r'ecrData = (.*);', text).group(1)
@@ -26,13 +25,5 @@ def web_scrape():
         raw_df = raw_df.iloc[lambda x: x.index < 100]
 
         # Player names to id
-        raw_df_list = raw_df.values.tolist()
-        players_dict = Player.objects.all().values()
-        sorted_players_dict = sorted(players_dict, key=lambda x: x['player_name'])
-        df_list = []
-        for item in raw_df_list:
-            player_id = helpers.binary_search_for_player(sorted_players_dict, 0, len(players_dict)-1, item[0])
-            df_list_item = {'player_id': player_id, 'rank':item[1]}
-            df_list.append(df_list_item)
-        source['df_list'] = df_list
+        source['df_list'] = helpers.swap_name_with_id(raw_df, players_dict)
     return sources

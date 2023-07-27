@@ -27,3 +27,13 @@ def search_with_levenshtein(players_dict, player):
             player_dict_distance = {'player_dict': player_dict, 'distance': distance}
 
     return player_dict_distance['player_dict']['id']
+
+def swap_name_with_id(raw_df, players_dict):
+        raw_df_list = raw_df.values.tolist()
+        sorted_players_dict = sorted(players_dict, key=lambda x: x['player_name'])
+        df_list = []
+        for item in raw_df_list:
+            player_id = binary_search_for_player(sorted_players_dict, 0, len(players_dict)-1, item[0])
+            df_list_item = {'player_id': player_id, 'rank':item[1]}
+            df_list.append(df_list_item)
+        return df_list

@@ -8,17 +8,20 @@ from ranking_app.models import Ranking
 from .web_scrape import cbs, fantasypros, fftoday, footballguys, thescore
 
 def web_scrap_to_db():
-    rankings = []
+    players_dict = Player.objects.all().values()
     try:
-        rankings.append(cbs.web_scrape())
-        # cbs_rankings = rankings[0]['df']
-    except:
-        print("CBS Failed")
+        cbs_rankings = cbs.web_scrape(players_dict)
+        for cbs_ranking in cbs_rankings:
+            print(cbs_rankings['url'])
+            print(cbs_ranking['scoring_type'])
+    except Exception as error:
+        print("CBS Failed: " + error)
     try:
-        rankings.append(fantasypros.web_scrape())
+        fantasypros_rankings = fantasypros.web_scrape(players_dict)
+        # print(fantasypros_rankings)
         # fantasypros_rankings = rankings[0]['df']
-    except:
-        print("Fantasy Pros Failed")
+    except Exception as error:
+        print("Fantasy Pros Failed: " + error)
 
 def update_players():
     Player.objects.all().delete()
