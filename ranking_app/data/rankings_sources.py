@@ -36,3 +36,16 @@ footballguys_sources = [
         'position_ranking_type': 'OVERALL' 
     }
 ]
+
+thescore_sources = [
+    {
+        'url': 'https://www.thescore.com/news/2563170',
+        'scoring_type': 'STANDARD',
+        'position_ranking_type': 'OVERALL' 
+    },
+    {
+        'url': 'https://www.thescore.com/news/2563174',
+        'scoring_type': 'PPR',
+        'position_ranking_type': 'OVERALL' 
+    }
+]

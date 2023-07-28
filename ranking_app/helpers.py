@@ -7,7 +7,6 @@ def binary_search_for_player(players_dict, low, high, player):
     while low <= high:
         mid = low + (high - low) // 2
         player_dict_name = players_dict[mid]['player_name']
-
         if player_dict_name.lower() == player_name.lower():
             return players_dict[mid]['id']
  
@@ -39,14 +38,14 @@ def search_with_levenshtein(players_dict, player):
     return player_dict_distance['player_dict']['id']
 
 def swap_name_with_id(raw_df, players_dict):
-        raw_df_list = raw_df.values.tolist()
-        sorted_players_dict = sorted(players_dict, key=lambda x: x['player_name'])
-        df_list = []
-        for player in raw_df_list:
-            player_id = binary_search_for_player(sorted_players_dict, 0, len(players_dict)-1, player)
-            df_list_item = {'player_id': player_id, 'rank':player[1]}
-            df_list.append(df_list_item)
-        return df_list
+    raw_df_list = raw_df.values.tolist()
+    sorted_players_dict = sorted(players_dict, key=lambda x: x['player_name'])
+    df_list = []
+    for player in raw_df_list:
+        player_id = binary_search_for_player(sorted_players_dict, 0, len(players_dict)-1, player)
+        df_list_item = {'player_id': player_id, 'rank':player[1]}
+        df_list.append(df_list_item)
+    return df_list
 
 def web_scrape(players_dict):
     rankings = {}
@@ -67,6 +66,12 @@ def web_scrape(players_dict):
         rankings['FootballGuys'] = footballguys_rankings
     except Exception as error:
         print("FootballGuys Failed: ")
+        print(error)
+    try:
+        thescore_rankings = thescore.web_scrape(players_dict)
+        rankings['TheScore'] = thescore_rankings
+    except Exception as error:
+        print("TheScore Failed: ")
         print(error)
 
 
