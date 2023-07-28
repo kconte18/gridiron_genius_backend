@@ -23,3 +23,16 @@ fftoday_sources = [
         'position_ranking_type': 'OVERALL' 
     }
 ]
+
+footballguys_sources = [
+    {
+        'url': 'https://www.footballguys.com/rankings/duration/preseason?pos=all&ppr=0',
+        'scoring_type': 'STANDARD',
+        'position_ranking_type': 'OVERALL' 
+    },
+    {
+        'url': 'https://www.footballguys.com/rankings/duration/preseason?pos=all&ppr=1',
+        'scoring_type': 'PPR',
+        'position_ranking_type': 'OVERALL' 
+    }
+]

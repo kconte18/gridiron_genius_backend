@@ -57,10 +57,16 @@ def web_scrape(players_dict):
         print("Fantasy Pros Failed: ")
         print(error)
     try:
-        fftoday_rankings = fftoday.web_scrape(players_dict)
-        rankings['FFToday'] = fftoday_rankings
+        footballguys_rankings = fftoday.web_scrape(players_dict)
+        rankings['FFToday'] = footballguys_rankings
     except Exception as error:
         print("FFToday Failed: ")
+        print(error)
+    try:
+        footballguys_rankings = footballguys.web_scrape(players_dict)
+        rankings['FootballGuys'] = footballguys_rankings
+    except Exception as error:
+        print("FootballGuys Failed: ")
         print(error)
 
 
