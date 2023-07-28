@@ -4,8 +4,9 @@ import requests
 import pandas as pd
 
 from .. import helpers
+from ..data import rankings_sources
 
-sources = [{ 'url': 'https://www.fantasypros.com/nfl/rankings/consensus-cheatsheets.php', 'scoring_type': 'STANDARD', 'position_ranking_type': 'OVERALL' }, { 'url':'https://www.fantasypros.com/nfl/rankings/ppr-cheatsheets.php', 'scoring_type': 'PPR', 'position_ranking_type': 'OVERALL' }]
+sources = rankings_sources.fantasy_pros_sources
 
 def web_scrape(players_dict):
     for source in sources:    
