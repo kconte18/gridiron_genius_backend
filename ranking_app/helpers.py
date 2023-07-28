@@ -44,7 +44,7 @@ def swap_name_with_id(raw_df, players_dict):
         df_list = []
         for player in raw_df_list:
             player_id = binary_search_for_player(sorted_players_dict, 0, len(players_dict)-1, player)
-            df_list_item = {'player_id': player_id, 'rank':player[3]}
+            df_list_item = {'player_id': player_id, 'rank':player[1]}
             df_list.append(df_list_item)
         return df_list
 
