@@ -20,16 +20,16 @@ def binary_search_for_player(players_dict, low, high, player):
 
 def search_with_levenshtein(players_dict, player):
     # Filters by player team, then by player position
-    filtered_players_dict = []
-    for player_dict in players_dict:
-        if player_dict['team'] == player[1]:
-            filtered_players_dict.append(player_dict)
-        elif player_dict['position'] == player[2]:
-            filtered_players_dict.append(player_dict)
+    # filtered_players_dict = []
+    # for player_dict in players_dict:
+    #     if player_dict['team'] == player[1]:
+    #         filtered_players_dict.append(player_dict)
+    #     elif player_dict['position'] == player[2]:
+    #         filtered_players_dict.append(player_dict)
     # Searches filtered_players_dict for most likely player with Levenshtein
     player_dict_distance= {'player_dict': 'Nothing is related', 'distance': 20}
     levenshtein = Levenshtein()
-    for player_dict in filtered_players_dict:
+    for player_dict in players_dict:
         player_dict_name = player_dict['player_name']
         distance = levenshtein.distance(player_dict_name, player)
 
@@ -49,11 +49,12 @@ def swap_name_with_id(raw_df, players_dict):
         return df_list
 
 def web_scrape(players_dict):
-    rankings = []
+    rankings = {}
 
     try:
         fantasypros_rankings = fantasypros.web_scrape(players_dict)
-        rankings.append(fantasypros_rankings)
+        rankings['FantasyPros'] = fantasypros_rankings
+        # rankings.append(fantasypros_rankings)
     except Exception as error:
         print("Fantasy Pros Failed: ")
         print(error)
