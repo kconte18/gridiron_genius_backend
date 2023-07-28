@@ -50,12 +50,6 @@ def swap_name_with_id(raw_df, players_dict):
 
 def web_scrape(players_dict):
     rankings = []
-    # try:
-    #     cbs_rankings = cbs.web_scrape(players_dict)
-    #     rankings.append(cbs_rankings)
-    # except Exception as error:
-    #     print("CBS Failed: ")
-    #     print(error)
 
     try:
         fantasypros_rankings = fantasypros.web_scrape(players_dict)

@@ -13,6 +13,7 @@ def web_scrape(players_dict):
         soup = BeautifulSoup(r.content, 'html.parser')
         s = soup.find('div', class_='experts-column')
         players = s.find_all('span', class_='player-name')
+        print(players)
         rank_num = 1
         player_name_list = []
         rank_list = []
