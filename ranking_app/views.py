@@ -5,9 +5,12 @@ from . import services
 
 # Create your views here.
 def refresh_ranking_db(request):
-    data = services.web_scrap_to_db()
-    print(data)
-    return HttpResponse('Rankings Updated')
+    try:
+        data = services.update_rankings()
+        print(data)
+        return HttpResponse('Rankings Updated')
+    except:
+        return HttpResponseServerError('Error in update_rankings()')
 
 def refresh_players_db(request):
     try:
