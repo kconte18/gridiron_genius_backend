@@ -6,7 +6,7 @@ import pandas as pd
 from .. import helpers
 from ..data import rankings_sources
 
-sources = rankings_sources.fantasy_pros_sources
+sources = rankings_sources.fantasypros_sources
 
 def web_scrape(players_dict):
     for source in sources:    

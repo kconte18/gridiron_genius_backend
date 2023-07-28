@@ -2,11 +2,14 @@ import requests
 import pandas as pd
 from bs4 import BeautifulSoup
 
-urls=['https://www.fftoday.com/rankings/playerrank.php?o=4&RankType=redraft&Scoring=1&LeagueID=1', 'https://www.fftoday.com/rankings/playerrank.php?o=4&RankType=redraft&Scoring=3&LeagueID=1']
+from ..data import rankings_sources
+from .. import helpers
 
-def web_scrape():
-    for url in urls:
-        r = requests.get(url)
+sources = rankings_sources.fftoday_sources
+
+def web_scrape(players_dict):
+    for source in sources:
+        r = requests.get(source['url'])
         soup = BeautifulSoup(r.content, 'html5lib')
 
         s_list = soup.find_all('td', class_='smallbody', align='LEFT')
@@ -20,5 +23,7 @@ def web_scrape():
             rank_num = rank_num + 1
 
         ranking_data = {'player_name':player_list, 'rank':rank_list}
-        df = pd.DataFrame(ranking_data)
-        print(df)
+        raw_df = pd.DataFrame(ranking_data)
+
+        source['df_list'] = helpers.swap_name_with_id(raw_df, players_dict)
+    return sources
