@@ -1,3 +1,6 @@
+
+# !!! NOT USING CBS ANYMORE, TOO COMPLICATED WITH THE NAMES HAVING NO FIRST_NAME !!!
+
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
