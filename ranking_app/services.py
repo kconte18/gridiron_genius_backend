@@ -8,6 +8,10 @@ from ranking_app.models import Player
 from ranking_app.models import RankingSource
 from ranking_app.models import Ranking
 
+def get_rankings_by_score_and_position(score_type, position):
+    print(score_type)
+    print(position)
+
 def update_rankings():
     Ranking.objects.all().delete()
     RankingSource.objects.all().delete()

@@ -19,5 +19,9 @@ def refresh_players_db(request):
     except:
         return HttpResponseServerError("Error in update_players()")
 
-def get_rankings(request):
-    return HttpResponse('it works')
+def get_rankings(request, score_type, position):
+    try:
+        rankings = services.get_rankings_by_score_and_position(score_type, position)
+        return HttpResponse('it works')
+    except:
+        return HttpResponseServerError("Error in get_rankings")
