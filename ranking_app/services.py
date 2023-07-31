@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 from datetime import date
+from django.http import HttpResponseBadRequest
 
 from . import helpers
 
@@ -9,8 +10,11 @@ from ranking_app.models import RankingSource
 from ranking_app.models import Ranking
 
 def get_rankings_by_score_and_position(score_type, position):
-    print(score_type)
-    print(position)
+    if not((score_type == 'ppr' or score_type == 'standard') and (position == 'overall' or position == 'qb' or position == 'rb' or position == 'wr' or position == 'te' or position == 'def' or position == 'k')):
+        raise HttpResponseBadRequest("Bad query parameters")
+    ranking_sources = RankingSource.objects.filter(scoring_type= score_type.upper(), position_ranking_type= position.upper())
+    rankings = Ranking.objects.filter(ranking_src__id__in= ranking_sources.all())
+    return rankings.values()
 
 def update_rankings():
     Ranking.objects.all().delete()
