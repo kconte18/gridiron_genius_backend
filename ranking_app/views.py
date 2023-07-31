@@ -1,15 +1,18 @@
 from django.http import HttpResponse, HttpResponseServerError
 from django.shortcuts import render
 
+import json 
+
 from . import services
 
 # Create your views here.
 def get_rankings(request, score_type, position):
-    # try:
-    rankings = services.get_rankings_by_score_and_position(score_type, position)
-    return HttpResponse(rankings)
-    # except:
-    #     return HttpResponseServerError("Error in get_rankings")
+    try:
+        rankings = services.get_rankings_by_score_and_position(score_type, position)
+        rankings_json = json.dumps(rankings.data)
+        return HttpResponse(rankings_json, content_type='application/json')
+    except:
+        return HttpResponseServerError("Error in get_rankings")
     
 def refresh_ranking_db(request):
     try:

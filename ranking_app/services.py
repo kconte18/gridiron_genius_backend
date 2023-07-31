@@ -1,9 +1,10 @@
 import numpy as np
 import pandas as pd
 from datetime import date
-from django.http import HttpResponseBadRequest
+from django.http import HttpResponseBadRequest, HttpResponse
 
 from . import helpers
+from . import serializers
 
 from ranking_app.models import Player
 from ranking_app.models import RankingSource
@@ -14,7 +15,8 @@ def get_rankings_by_score_and_position(score_type, position):
         raise HttpResponseBadRequest("Bad query parameters")
     ranking_sources = RankingSource.objects.filter(scoring_type= score_type.upper(), position_ranking_type= position.upper())
     rankings = Ranking.objects.filter(ranking_src__id__in= ranking_sources.all())
-    return rankings.values()
+    serializer = serializers.RankingSerializer(rankings, many=True)
+    return serializer
 
 def update_rankings():
     Ranking.objects.all().delete()
