@@ -16,8 +16,7 @@ def get_rankings(request, score_type, position):
     
 def refresh_ranking_db(request):
     try:
-        data = services.update_rankings()
-        print(data)
+        services.update_rankings()
         return HttpResponse('Rankings Updated')
     except:
         return HttpResponseServerError('Error in update_rankings()')
