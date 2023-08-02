@@ -8,7 +8,7 @@ sources = rankings_sources.footballguys_sources
 def web_scrape(players_dict):
     for source in sources:
         rb_df = pd.read_html(source['url'])
-        raw_df = rb_df[0].iloc[lambda x: x.index < 112]
+        raw_df = rb_df[0].iloc[lambda x: x.index < 113]
         column_list = raw_df.columns.tolist()
         
         rank_column_value = column_list[0]
