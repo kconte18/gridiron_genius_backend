@@ -1,6 +1,6 @@
 from strsimpy.levenshtein import Levenshtein
 
-from .web_scrape import fantasypros, fftoday, footballguys, thescore
+from .web_scrape import fantasypros, fftoday, thescore
 
 # SEARCH FOR PLAYERS WITH BINARY
 def binary_search_for_player(players_dict, low, high, player):

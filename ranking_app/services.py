@@ -1,10 +1,6 @@
-import json
-import numpy as np
 import pandas as pd
 from datetime import date
-from django.http import HttpResponseBadRequest, HttpResponse
-
-from django.core.serializers import serialize
+from django.http import HttpResponseBadRequest
 
 from . import helpers
 from . import serializers
@@ -38,6 +34,7 @@ def update_rankings():
                 df_list_item_player = Player.objects.get(pk= df_list_item['player_id'])
                 new_player_ranking = Ranking(ranking_src= new_ranking_source, player= df_list_item_player, rank=df_list_item['rank'])
                 new_player_ranking.save()
+    update_rankings_avg()
 
 def update_players():
     Player.objects.all().delete()
@@ -47,6 +44,7 @@ def update_players():
         new_player = Player(id= player[0], player_name= player[1], team= player[2], position=player[3], bye_week=player[4])
         new_player.save()
 
+# This is called in the update_rankings service method
 def update_rankings_avg():
     score_type_list = ['STANDARD', 'PPR']
     position_type_list = ['OVERALL', 'QB', 'RB', 'WR', 'TE']

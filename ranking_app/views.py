@@ -27,8 +27,3 @@ def refresh_players_db(request):
         return HttpResponse("Players Updated")
     except:
         return HttpResponseServerError("Error in update_players()")
-    
-# TEMP VIEW FOR FINDING AVG, WILL BE UNDER refresh_ranking_db
-def get_rankings_avg(request):
-    services.get_rankings_avg()
-    return HttpResponse("Good")
