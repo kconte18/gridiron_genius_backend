@@ -19,7 +19,6 @@ def web_scrape(players_dict):
         df = df[df["Rank"].str.contains("Tier") == False]
         df['Player'] = df['Player'].str.rstrip(' ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789')
         df = df.reindex(columns=['Player', 'Rank'])
-        print(df)
         
         source['df_list'] = helpers.swap_name_with_id(df, players_dict)
     return sources

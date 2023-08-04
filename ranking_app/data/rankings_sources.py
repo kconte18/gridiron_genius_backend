@@ -8,6 +8,46 @@ fantasypros_sources = [
         'url':'https://www.fantasypros.com/nfl/rankings/ppr-cheatsheets.php', 
         'scoring_type': 'PPR', 
         'position_ranking_type': 'OVERALL' 
+    },
+    { 
+        'url': 'https://www.fantasypros.com/nfl/rankings/qb-cheatsheets.php', 
+        'scoring_type': 'STANDARD', 
+        'position_ranking_type': 'QB' 
+    }, 
+     { 
+        'url':'https://www.fantasypros.com/nfl/rankings/qb-cheatsheets.php', 
+        'scoring_type': 'PPR', 
+        'position_ranking_type': 'QB' 
+    },
+    { 
+        'url': 'https://www.fantasypros.com/nfl/rankings/rb-cheatsheets.php', 
+        'scoring_type': 'STANDARD', 
+        'position_ranking_type': 'RB' 
+    }, 
+     { 
+        'url':'https://www.fantasypros.com/nfl/rankings/ppr-rb-cheatsheets.php', 
+        'scoring_type': 'PPR', 
+        'position_ranking_type': 'RB' 
+    },
+    { 
+        'url': 'https://www.fantasypros.com/nfl/rankings/wr-cheatsheets.php', 
+        'scoring_type': 'STANDARD', 
+        'position_ranking_type': 'WR' 
+    }, 
+     { 
+        'url':'https://www.fantasypros.com/nfl/rankings/ppr-wr-cheatsheets.php', 
+        'scoring_type': 'PPR', 
+        'position_ranking_type': 'WR' 
+    },
+    { 
+        'url': 'https://www.fantasypros.com/nfl/rankings/te-cheatsheets.php', 
+        'scoring_type': 'STANDARD', 
+        'position_ranking_type': 'TE' 
+    }, 
+     { 
+        'url':'https://www.fantasypros.com/nfl/rankings/ppr-te-cheatsheets.php', 
+        'scoring_type': 'PPR', 
+        'position_ranking_type': 'TE' 
     }
 ]
 
