@@ -127,5 +127,45 @@ thescore_sources = [
         'url': 'https://www.thescore.com/news/2563174',
         'scoring_type': 'PPR',
         'position_ranking_type': 'OVERALL' 
-    }
+    },
+    {
+        'url': 'https://www.thescore.com/news/2684949',
+        'scoring_type': 'STANDARD',
+        'position_ranking_type': 'QB' 
+    },
+    {
+        'url': 'https://www.thescore.com/news/2684949',
+        'scoring_type': 'PPR',
+        'position_ranking_type': 'QB' 
+    },
+    {
+        'url': 'https://www.thescore.com/news/2563167',
+        'scoring_type': 'STANDARD',
+        'position_ranking_type': 'RB' 
+    },
+    {
+        'url': 'https://www.thescore.com/news/2563171',
+        'scoring_type': 'PPR',
+        'position_ranking_type': 'RB' 
+    },
+    {
+        'url': 'https://www.thescore.com/news/2563168',
+        'scoring_type': 'STANDARD',
+        'position_ranking_type': 'WR' 
+    },
+    {
+        'url': 'https://www.thescore.com/news/2563172',
+        'scoring_type': 'PPR',
+        'position_ranking_type': 'WR' 
+    },
+    {
+        'url': 'https://www.thescore.com/news/2563169',
+        'scoring_type': 'STANDARD',
+        'position_ranking_type': 'TE' 
+    },
+    {
+        'url': 'https://www.thescore.com/news/2563173',
+        'scoring_type': 'PPR',
+        'position_ranking_type': 'TE' 
+    },
 ]
