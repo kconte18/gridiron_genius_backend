@@ -47,6 +47,8 @@ def find_ranking_averages(rankings):
     for key, value in rankings_avg.items():
         rank_avg = value['rank_total'] / value['occurrence']
         value['rank_avg'] = rank_avg
+        del value['rank_total']
+        del value['occurrence']
     return rankings_avg
 
 # SWAPPING THE PLAYERS NAME WITH THEIR ID

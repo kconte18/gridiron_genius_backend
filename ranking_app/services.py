@@ -1,7 +1,10 @@
+import json
 import numpy as np
 import pandas as pd
 from datetime import date
 from django.http import HttpResponseBadRequest, HttpResponse
+
+from django.core.serializers import serialize
 
 from . import helpers
 from . import serializers
@@ -44,24 +47,23 @@ def update_players():
         new_player = Player(id= player[0], player_name= player[1], team= player[2], position=player[3], bye_week=player[4])
         new_player.save()
 
-# TEMP SERVICE FOR GET_RANKINGS_AVERAGE, WILL BE UNDER UPDATE RANKINGS
-def get_rankings_avg():
-    rankings = Ranking.objects.all()
-    rankings_avg = helpers.find_ranking_averages(rankings)
-    print(rankings_avg)
-    avg_ranking_src = {
-
-    }
-    # !!!!!! NEED TO ITERATE OVER SPECIFIC POSITIONS, NOT ALL RANKINGS (WHICH IS WHAT IT IS NOW)
-
-    # ranking_src_name = models.CharField(max_length=30)
-    # ranking_src_url = models.TextField()
-    # date = models.DateField()
-    # scoring_type = models.CharField(max_length=10, choices=SCORING_TYPES)
-    # position_ranking_type = models.CharField(max_length=7 ,choices=POSITION_RANKING_TYPES)
-
-
-    for key, value in rankings_avg.items():
-        player = Player.objects.get(pk= key)
-        print(player)
-    # print(rankings)
+def update_rankings_avg():
+    score_type_list = ['STANDARD', 'PPR']
+    position_type_list = ['OVERALL', 'QB', 'RB', 'WR', 'TE']
+    for score_type in score_type_list:
+        for position_type in position_type_list:
+            ranking_sources = RankingSource.objects.filter(scoring_type= score_type, position_ranking_type= position_type)
+            rankings = Ranking.objects.filter(ranking_src__id__in= ranking_sources.all())
+            rankings_avg = helpers.find_ranking_averages(rankings)
+            avg_ranking_src = RankingSource(
+                ranking_src_name= 'AVERAGE',
+                ranking_src_url= 'N/A',
+                date= date.today(),
+                scoring_type= score_type,
+                position_ranking_type= position_type
+            )
+            avg_ranking_src.save()
+            for key, value in rankings_avg.items():
+                player = Player.objects.get(pk= key)
+                new_ranking_avg =  Ranking(ranking_src= avg_ranking_src, player= player, rank= value['rank_avg'])
+                new_ranking_avg.save()
