@@ -2,7 +2,7 @@ from strsimpy.levenshtein import Levenshtein
 
 from .web_scrape import fantasypros, fftoday, footballguys, thescore
 
-
+# SEARCH FOR PLAYERS WITH BINARY
 def binary_search_for_player(players_dict, low, high, player):
     player_name = player[0]
     while low <= high:
@@ -18,7 +18,7 @@ def binary_search_for_player(players_dict, low, high, player):
             high = mid - 1
     return search_with_levenshtein(players_dict, player)
 
-
+# IF CAN'T FIND PLAYERS WITH BINARY, SEARCH PLAYERS WITH LEVENSHTEIN
 def search_with_levenshtein(players_dict, player):
     player_dict_distance = {"player_dict": players_dict[0], "distance": 20}
     levenshtein = Levenshtein()
@@ -32,7 +32,24 @@ def search_with_levenshtein(players_dict, player):
 
     return player_dict_distance["player_dict"]["id"]
 
+# FINDS EACH PLAYER AND CALCULATES WITH OCCURENCE AND WITH ALL THE RANKS
+def find_ranking_averages(rankings):
+    rankings_avg = {}
+    for ranking in rankings:
+        if ranking.player.id in rankings_avg.keys():
+            rankings_avg[ranking.player.id]['occurrence'] = rankings_avg[ranking.player.id]['occurrence'] + 1
+            rankings_avg[ranking.player.id]['rank_total'] = rankings_avg[ranking.player.id]['rank_total'] + ranking.rank
+        else:
+            rankings_avg[ranking.player.id] = {
+                'occurrence': 1,
+                'rank_total': ranking.rank
+            }
+    for key, value in rankings_avg.items():
+        rank_avg = value['rank_total'] / value['occurrence']
+        value['rank_avg'] = rank_avg
+    return rankings_avg
 
+# SWAPPING THE PLAYERS NAME WITH THEIR ID
 def swap_name_with_id(raw_df, players_dict):
     raw_df_list = raw_df.values.tolist()
     sorted_players_dict = sorted(players_dict, key=lambda x: x["player_name"])
@@ -45,7 +62,7 @@ def swap_name_with_id(raw_df, players_dict):
         df_list.append(df_list_item)
     return df_list
 
-
+# WEB SCRAPES EACH WEBSITE
 def web_scrape(players_dict):
     rankings = {}
     try:

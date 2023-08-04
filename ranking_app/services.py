@@ -43,3 +43,25 @@ def update_players():
     for player in player_list:
         new_player = Player(id= player[0], player_name= player[1], team= player[2], position=player[3], bye_week=player[4])
         new_player.save()
+
+# TEMP SERVICE FOR GET_RANKINGS_AVERAGE, WILL BE UNDER UPDATE RANKINGS
+def get_rankings_avg():
+    rankings = Ranking.objects.all()
+    rankings_avg = helpers.find_ranking_averages(rankings)
+    print(rankings_avg)
+    avg_ranking_src = {
+
+    }
+    # !!!!!! NEED TO ITERATE OVER SPECIFIC POSITIONS, NOT ALL RANKINGS (WHICH IS WHAT IT IS NOW)
+
+    # ranking_src_name = models.CharField(max_length=30)
+    # ranking_src_url = models.TextField()
+    # date = models.DateField()
+    # scoring_type = models.CharField(max_length=10, choices=SCORING_TYPES)
+    # position_ranking_type = models.CharField(max_length=7 ,choices=POSITION_RANKING_TYPES)
+
+
+    for key, value in rankings_avg.items():
+        player = Player.objects.get(pk= key)
+        print(player)
+    # print(rankings)

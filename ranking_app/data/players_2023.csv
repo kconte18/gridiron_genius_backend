@@ -12,8 +12,8 @@
 10011,C.J. Beathard,JAX,QB,9
 10012,C.J. Stroud,HOU,QB,7
 10013,Carson Wentz,FA,QB,0
-10014,Clayton Tune,ARI,QB,14
-10015,Colt McCoy,ARI,QB,14
+10014,Clayton Tune,ARZ,QB,14
+10015,Colt McCoy,ARZ,QB,14
 10016,Cooper Rush,DAL,QB,7
 10017,Dak Prescott,DAL,QB,7
 10018,Daniel Jones,NYG,QB,13
@@ -45,7 +45,7 @@
 10044,Kirk Cousins,MIN,QB,13
 10045,Kyle Allen,BUF,QB,13
 10046,Kyle Trask,TB,QB,5
-10047,Kyler Murray,ARI,QB,14
+10047,Kyler Murray,ARZ,QB,14
 10048,Lamar Jackson,BAL,QB,13
 10049,Mac Jones,NE,QB,11
 10050,Malik Willis,TEN,QB,7
@@ -94,7 +94,7 @@
 20018,Chuba Hubbard,CAR,RB,7
 20019,Clyde Edwards-Helaire,KC,RB,10
 20020,Cordarrelle Patterson,ATL,RB,11
-20021,Corey Clement,ARI,RB,14
+20021,Corey Clement,ARZ,RB,14
 20022,Craig Reynolds,DET,RB,9
 20023,D'Andre Swift,PHI,RB,10
 20024,D'Ernest Johnson,JAX,RB,9
@@ -127,7 +127,7 @@
 20051,J.K. Dobbins ,BAL,RB,13
 20052,Jahmyr Gibbs,DET,RB,9
 20053,Jamaal Williams,NO,RB,11
-20054,James Conner,ARI,RB,14
+20054,James Conner,ARZ,RB,14
 20055,James Cook,BUF,RB,13
 20056,James Robinson,NYG,RB,13
 20057,JaMycal Hasty,JAX,RB,9
@@ -146,7 +146,7 @@
 20070,Justin Jackson,DET,RB,9
 20071,Kareem Hunt,FA,RB,0
 20072,Ke'Shawn Vaughn,TB,RB,5
-20073,Keaontay Ingram,ARI,RB,14
+20073,Keaontay Ingram,ARZ,RB,14
 20074,Keaton Mitchell,BAL,RB,13
 20075,Kendre Miller,NO,RB,11
 20076,Kene Nwangwu,MIN,RB,13
@@ -241,7 +241,7 @@
 30040,Gabe Davis,BUF,WR,13
 30041,Garrett Wilson,NYJ,WR,7
 30042,George Pickens,PIT,WR,6
-30043,Greg Dortch,ARI,WR,14
+30043,Greg Dortch,ARZ,WR,14
 30044,Hunter Renfrow,LV,WR,13
 30045,Isaiah Hodgins,NYG,WR,13
 30046,Ja'Marr Chase,CIN,WR,7
@@ -276,14 +276,14 @@
 30075,Mack Hollins,ATL,WR,11
 30076,Marquez Callaway,DEN,WR,9
 30077,Marquez Valdes-Scantling,KC,WR,10
-30078,Marquise Brown,ARI,WR,14
+30078,Marquise Brown,ARZ,WR,14
 30079,Marvin Jones Jr.,DET,WR,9
 30080,Marvin Mims Jr.,DEN,WR,9
 30081,Mecole Hardman Jr.,NYJ,WR,7
 30082,Michael Gallup,DAL,WR,7
 30083,Michael Pittman Jr.,IND,WR,11
 30084,Michael Thomas,NO,WR,11
-30085,Michael Wilson,ARI,WR,14
+30085,Michael Wilson,ARZ,WR,14
 30086,Mike Evans,TB,WR,5
 30087,Mike Williams,LAC,WR,5
 30088,Nelson Agholor,BAL,WR,13
@@ -301,7 +301,7 @@
 30100,Robbie Chosen,MIA,WR,10
 30101,Robert Woods,HOU,WR,7
 30102,Romeo Doubs,GB,WR,6
-30103,Rondale Moore,ARI,WR,14
+30103,Rondale Moore,ARZ,WR,14
 30104,Russell Gage ,TB,WR,5
 30105,Skyy Moore,KC,WR,10
 30106,Stefon Diggs,BUF,WR,13
@@ -350,7 +350,7 @@
 40024,Logan Thomas,WAS,TE,14
 40025,Mike Gesicki,NE,TE,11
 40026,Michael Mayer,LV,TE,13
-40027,Trey McBride,ARI,TE,14
+40027,Trey McBride,ARZ,TE,14
 40028,Jake Ferguson,DAL,TE,7
 40029,Hunter Henry,NE,TE,11
 40030,Luke Musgrave,GB,TE,6
@@ -359,7 +359,7 @@
 40033,Dawson Knox,BUF,TE,13
 40034,Taysom Hill,NO,TE,11
 40035,Isaiah Likely,BAL,TE,13
-40036,Zach Ertz ,ARI,TE,14
+40036,Zach Ertz ,ARZ,TE,14
 40037,Cole Turner,WAS,TE,14
 40038,Donald Parham Jr.,LAC,TE,5
 40039,Noah Gray,KC,TE,10
@@ -390,7 +390,7 @@
 40064,Drew Sample,CIN,TE,7
 40065,Tyree Jackson,PHI,TE,10
 40066,Albert Okwuegbunam,DEN,TE,9
-50001,Arizona Cardinals,ARI,DEF,14
+50001,Arizona Cardinals,ARZ,DEF,14
 50002,Atlanta Falcons,ATL,DEF,11
 50003,Baltimore Ravens,BAL,DEF,13
 50004,Buffalo Bills,BUF,DEF,13
