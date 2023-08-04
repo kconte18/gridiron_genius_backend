@@ -61,12 +61,6 @@ def web_scrape(players_dict):
         print("FFToday Failed: ")
         print(error)
     try:
-        footballguys_rankings = footballguys.web_scrape(players_dict)
-        rankings["FootballGuys"] = footballguys_rankings
-    except Exception as error:
-        print("FootballGuys Failed: ")
-        print(error)
-    try:
         thescore_rankings = thescore.web_scrape(players_dict)
         rankings["TheScore"] = thescore_rankings
     except Exception as error:

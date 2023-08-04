@@ -61,7 +61,47 @@ fftoday_sources = [
         'url': 'https://www.fftoday.com/rankings/playerrank.php?o=4&RankType=redraft&Scoring=3&LeagueID=1',
         'scoring_type': 'PPR',
         'position_ranking_type': 'OVERALL' 
-    }
+    },
+    {
+        'url': 'https://www.fftoday.com/rankings/playerrank.php?o=1&PosID=10&LeagueID=',
+        'scoring_type': 'STANDARD',
+        'position_ranking_type': 'QB' 
+    },
+    {
+        'url': 'https://www.fftoday.com/rankings/playerrank.php?o=1&PosID=10&LeagueID=',
+        'scoring_type': 'PPR',
+        'position_ranking_type': 'QB' 
+    },
+    {
+        'url': 'https://www.fftoday.com/rankings/playerrank.php?o=1&PosID=20&Scoring=1&LeagueID=1',
+        'scoring_type': 'STANDARD',
+        'position_ranking_type': 'RB' 
+    },
+    {
+        'url': 'https://www.fftoday.com/rankings/playerrank.php?o=1&RankType=redraft&Scoring=3&PosID=20&LeagueID=1',
+        'scoring_type': 'PPR',
+        'position_ranking_type': 'RB' 
+    },
+    {
+        'url': 'https://www.fftoday.com/rankings/playerrank.php?o=1&RankType=redraft&Scoring=1&PosID=30&LeagueID=1',
+        'scoring_type': 'STANDARD',
+        'position_ranking_type': 'WR' 
+    },
+    {
+        'url': 'https://www.fftoday.com/rankings/playerrank.php?o=1&RankType=redraft&Scoring=3&PosID=30&LeagueID=1',
+        'scoring_type': 'PPR',
+        'position_ranking_type': 'WR' 
+    },
+    {
+        'url': 'https://www.fftoday.com/rankings/playerrank.php?o=1&RankType=redraft&Scoring=1&PosID=40&LeagueID=1',
+        'scoring_type': 'STANDARD',
+        'position_ranking_type': 'TE' 
+    },
+    {
+        'url': 'https://www.fftoday.com/rankings/playerrank.php?o=1&RankType=redraft&Scoring=3&PosID=40&LeagueID=1',
+        'scoring_type': 'PPR',
+        'position_ranking_type': 'TE' 
+    },
 ]
 
 footballguys_sources = [

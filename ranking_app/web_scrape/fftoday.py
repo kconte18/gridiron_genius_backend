@@ -13,7 +13,16 @@ def web_scrape(players_dict):
         soup = BeautifulSoup(r.content, 'html5lib')
 
         s_list = soup.find_all('td', class_='smallbody', align='LEFT')
-        s_list = s_list[0:100]
+        if(source['position_ranking_type'] == 'OVERALL'):
+            s_list = s_list[0:100]
+        elif(source['position_ranking_type'] == 'QB'):
+            s_list = s_list[0:32]
+        elif(source['position_ranking_type'] == 'RB'):
+            s_list = s_list[0:50]
+        elif(source['position_ranking_type'] == 'WR'):
+            s_list = s_list[0:50]
+        elif(source['position_ranking_type'] == 'TE'):
+            s_list = s_list[0:40]
         player_list = []
         rank_list = []
         rank_num = 1
