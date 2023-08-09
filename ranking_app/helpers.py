@@ -1,6 +1,6 @@
 from strsimpy.levenshtein import Levenshtein
 
-from .web_scrape import fantasypros, fftoday, thescore
+from .web_scrape import fantasypros, fftoday, thescore, walters
 
 # SEARCH FOR PLAYERS WITH BINARY
 def binary_search_for_player(players_dict, low, high, player):
@@ -85,5 +85,11 @@ def web_scrape(players_dict):
     except Exception as error:
         print("TheScore Failed: ")
         print(error)
-
+    try:
+        walters_rankings = walters.web_scrape(players_dict)
+        rankings['WalterFootball'] = walters_rankings
+    except Exception as error:
+        print("Walter Football Failed: ")
+        print(error)
+        
     return rankings

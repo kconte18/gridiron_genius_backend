@@ -65,3 +65,7 @@ def update_rankings_avg():
                 player = Player.objects.get(pk= key)
                 new_ranking_avg =  Ranking(ranking_src= avg_ranking_src, player= player, rank= value['rank_avg'])
                 new_ranking_avg.save()
+
+# SERVICE FOR TESTING WITHOUT MESSING DB
+def test():
+    print("Test")
