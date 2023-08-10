@@ -1,3 +1,6 @@
+
+# !!!! CAN'T USE FOOTBALLGUYS, THEY BLOCK PPR RANKINGS WITH PAY WALL
+
 import pandas as pd
 
 from ..data import rankings_sources

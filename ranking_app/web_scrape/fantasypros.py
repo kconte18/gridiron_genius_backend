@@ -34,7 +34,7 @@ def web_scrape(players_dict):
         elif(source['position_ranking_type'] == 'WR'):
             raw_df = raw_df.iloc[lambda x: x.index < 50]
         elif(source['position_ranking_type'] == 'TE'):
-            raw_df = raw_df.iloc[lambda x: x.index < 40]
+            raw_df = raw_df.iloc[lambda x: x.index < 35]
 
         # Player names to id
         source['df_list'] = helpers.swap_name_with_id(raw_df, players_dict)

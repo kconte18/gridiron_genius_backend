@@ -1,3 +1,56 @@
+espn_sources = [
+    {
+        'url': 'https://g.espncdn.com/s/ffldraftkit/23/NFL23_CS_Non300.pdf?adddata=2023CS_Non300',
+        'scoring_type': 'STANDARD',
+        'position_ranking_type': 'OVERALL' 
+    },
+    {
+        'url': 'https://g.espncdn.com/s/ffldraftkit/23/NFL23_CS_PPR300.pdf?adddata=2023CS_PPR300',
+        'scoring_type': 'PPR',
+        'position_ranking_type': 'OVERALL' 
+    },
+    {
+        'url': 'https://g.espncdn.com/s/ffldraftkit/23/NFL23_CS_Non.pdf?adddata=2023CS_Non',
+        'scoring_type': 'STANDARD',
+        'position_ranking_type': 'QB' 
+    },
+    {
+        'url': 'https://g.espncdn.com/s/ffldraftkit/23/NFL23_CS_PPR.pdf?adddata=2023CS_PPR',
+        'scoring_type': 'PPR',
+        'position_ranking_type': 'QB' 
+    },
+    {
+        'url': 'https://g.espncdn.com/s/ffldraftkit/23/NFL23_CS_Non.pdf?adddata=2023CS_Non',
+        'scoring_type': 'STANDARD',
+        'position_ranking_type': 'RB' 
+    },
+    {
+        'url': 'https://g.espncdn.com/s/ffldraftkit/23/NFL23_CS_PPR.pdf?adddata=2023CS_PPR',
+        'scoring_type': 'PPR',
+        'position_ranking_type': 'RB' 
+    },
+    {
+        'url': 'https://g.espncdn.com/s/ffldraftkit/23/NFL23_CS_Non.pdf?adddata=2023CS_Non',
+        'scoring_type': 'STANDARD',
+        'position_ranking_type': 'WR' 
+    },
+    {
+        'url': 'https://g.espncdn.com/s/ffldraftkit/23/NFL23_CS_PPR.pdf?adddata=2023CS_PPR',
+        'scoring_type': 'PPR',
+        'position_ranking_type': 'WR' 
+    },
+    {
+        'url': 'https://g.espncdn.com/s/ffldraftkit/23/NFL23_CS_Non.pdf?adddata=2023CS_Non',
+        'scoring_type': 'STANDARD',
+        'position_ranking_type': 'TE' 
+    },
+    {
+        'url': 'https://g.espncdn.com/s/ffldraftkit/23/NFL23_CS_PPR.pdf?adddata=2023CS_PPR',
+        'scoring_type': 'PPR',
+        'position_ranking_type': 'TE' 
+    },
+]
+
 fantasypros_sources = [
     { 
         'url': 'https://www.fantasypros.com/nfl/rankings/consensus-cheatsheets.php', 

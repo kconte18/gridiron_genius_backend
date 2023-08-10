@@ -1,6 +1,6 @@
 from strsimpy.levenshtein import Levenshtein
 
-from .web_scrape import fantasypros, fftoday, thescore, walters
+from .web_scrape import fantasypros, fftoday, thescore, walters, espn
 
 # SEARCH FOR PLAYERS WITH BINARY
 def binary_search_for_player(players_dict, low, high, player):
@@ -68,6 +68,12 @@ def swap_name_with_id(raw_df, players_dict):
 def web_scrape(players_dict):
     rankings = {}
     try:
+        espn_rankings = espn.web_scrape_pdf(players_dict)
+        rankings["ESPN"] = espn_rankings
+    except Exception as error:
+        print("ESPN Failed: ")
+        print(error)
+    try:
         fantasypros_rankings = fantasypros.web_scrape(players_dict)
         rankings["FantasyPros"] = fantasypros_rankings
     except Exception as error:
@@ -93,3 +99,6 @@ def web_scrape(players_dict):
         print(error)
         
     return rankings
+
+def test():
+    print('test')

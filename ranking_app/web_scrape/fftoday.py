@@ -22,7 +22,7 @@ def web_scrape(players_dict):
         elif(source['position_ranking_type'] == 'WR'):
             s_list = s_list[0:50]
         elif(source['position_ranking_type'] == 'TE'):
-            s_list = s_list[0:40]
+            s_list = s_list[0:35]
         player_list = []
         rank_list = []
         rank_num = 1

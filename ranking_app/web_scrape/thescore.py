@@ -18,7 +18,7 @@ def web_scrape(players_dict):
         elif(source['position_ranking_type'] == 'WR'):
             df = rb_df[0].iloc[lambda x: x.index < 50]
         elif(source['position_ranking_type'] == 'TE'):
-            df = rb_df[0].iloc[lambda x: x.index < 40]
+            df = rb_df[0].iloc[lambda x: x.index < 35]
         df = df.drop(columns=["Team"])
         # df = df.rename(columns={"Player":"Player", "Rank":"rank"})
         df = df.reindex(columns=['Player', 'Rank'])

@@ -68,4 +68,4 @@ def update_rankings_avg():
 
 # SERVICE FOR TESTING WITHOUT MESSING DB
 def test():
-    print("Test")
+    print('test')
