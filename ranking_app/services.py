@@ -1,6 +1,6 @@
 import pandas as pd
 from datetime import date
-from django.http import HttpResponseBadRequest
+from django.http import HttpResponseBadRequest, HttpResponseServerError
 
 from . import helpers
 from . import serializers
@@ -11,17 +11,18 @@ from ranking_app.models import Ranking
 
 def get_rankings_by_score_and_position(score_type, position):
     if not((score_type == 'ppr' or score_type == 'standard') and (position == 'overall' or position == 'qb' or position == 'rb' or position == 'wr' or position == 'te' or position == 'def' or position == 'k')):
-        raise HttpResponseBadRequest("Bad query parameters")
+        raise Exception("Bad query parameters")
     ranking_sources = RankingSource.objects.filter(scoring_type= score_type.upper(), position_ranking_type= position.upper())
     rankings = Ranking.objects.filter(ranking_src__id__in= ranking_sources.all())
     serializer = serializers.RankingSerializer(rankings, many=True)
     return serializer
 
 def update_rankings():
-    Ranking.objects.all().delete()
-    RankingSource.objects.all().delete()
     players_dict = Player.objects.all().values()
     rankings_src = helpers.web_scrape(players_dict)
+    # If any of the web_scrapes fails, it will raise an exception and respond with the errors
+    Ranking.objects.all().delete()
+    RankingSource.objects.all().delete()
     for ranking_src in rankings_src:
         rankings = rankings_src[ranking_src]
         for ranking in rankings:

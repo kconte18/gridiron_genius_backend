@@ -67,38 +67,66 @@ def swap_name_with_id(raw_df, players_dict):
 # WEB SCRAPES EACH WEBSITE
 def web_scrape(players_dict):
     rankings = {}
+    error_logs = []
     try:
         espn_rankings = espn.web_scrape_pdf(players_dict)
         rankings["ESPN"] = espn_rankings
     except Exception as error:
         print("ESPN Failed: ")
         print(error)
+        log_error = {
+            'Error Caused in': 'ESPN',
+            'Reason for error': error
+        }
+        error_logs.append(log_error)
     try:
         fantasypros_rankings = fantasypros.web_scrape(players_dict)
         rankings["FantasyPros"] = fantasypros_rankings
     except Exception as error:
         print("Fantasy Pros Failed: ")
         print(error)
+        log_error = {
+            'Error Caused in': 'Fantasy Pros',
+            'Reason for error': error
+        }
+        error_logs.append(log_error)
     try:
         footballguys_rankings = fftoday.web_scrape(players_dict)
         rankings["FfToday"] = footballguys_rankings
     except Exception as error:
         print("FFToday Failed: ")
         print(error)
+        log_error = {
+            'Error Caused in': 'FFToday',
+            'Reason for error': error
+        }
+        error_logs.append(log_error)
     try:
         thescore_rankings = thescore.web_scrape(players_dict)
         rankings["TheScore"] = thescore_rankings
     except Exception as error:
         print("TheScore Failed: ")
         print(error)
+        log_error = {
+            'Error Caused in': 'TheScore',
+            'Reason for error': error
+        }
+        error_logs.append(log_error)
     try:
         walters_rankings = walters.web_scrape(players_dict)
         rankings['WalterFootball'] = walters_rankings
     except Exception as error:
         print("Walter Football Failed: ")
         print(error)
-        
-    return rankings
+        log_error = {
+            'Error Caused in': 'Walter Football',
+            'Reason for error': error
+        }
+        error_logs.append(log_error)
+    if len(error_logs) > 0:
+        raise Exception(error_logs)
+    else:
+        return rankings
 
 def test():
     print('test')

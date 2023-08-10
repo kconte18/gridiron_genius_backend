@@ -1,4 +1,4 @@
-from django.http import HttpResponse, HttpResponseServerError
+from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseServerError
 from django.shortcuts import render
 
 import json 
@@ -11,15 +11,15 @@ def get_rankings(request, score_type, position):
         rankings = services.get_rankings_by_score_and_position(score_type, position)
         rankings_json = json.dumps(rankings.data)
         return HttpResponse(rankings_json, content_type='application/json')
-    except:
-        return HttpResponseServerError("Error in get_rankings")
+    except Exception as error:
+        return HttpResponseBadRequest(error)
     
 def refresh_ranking_db(request):
     try:
         services.update_rankings()
         return HttpResponse('Rankings Updated')
-    except:
-        return HttpResponseServerError('Error in update_rankings()')
+    except Exception as error:
+        return HttpResponseServerError(error)
 
 def refresh_players_db(request):
     try:
