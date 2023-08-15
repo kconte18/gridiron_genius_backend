@@ -1,5 +1,7 @@
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseServerError
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
 
 import json 
 
@@ -13,7 +15,8 @@ def get_rankings(request, score_type, position):
         return HttpResponse(rankings_json, content_type='application/json')
     except Exception as error:
         return HttpResponseBadRequest(error)
-    
+
+@staff_member_required   
 def refresh_ranking_db(request):
     try:
         services.update_rankings()
@@ -21,6 +24,7 @@ def refresh_ranking_db(request):
     except Exception as error:
         return HttpResponseServerError(error)
 
+@staff_member_required 
 def refresh_players_db(request):
     try:
         services.update_players()

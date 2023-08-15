@@ -83,7 +83,7 @@
 20007,Antonio Gibson,WAS,RB,14
 20008,Austin Ekeler,LAC,RB,5
 20009,Bijan Robinson,ATL,RB,11
-20010,Breece Hall ,NYJ,RB,7
+20010,Breece Hall,NYJ,RB,7
 20011,Brian Robinson Jr.,WAS,RB,14
 20012,Cam Akers,LAR,RB,10
 20013,Camerun Peoples,CAR,RB,7
@@ -99,7 +99,7 @@
 20023,D'Andre Swift,PHI,RB,10
 20024,D'Ernest Johnson,JAX,RB,9
 20025,D'Onta Foreman,CHI,RB,13
-20026,Dalvin Cook,FA,RB,0
+20026,Dalvin Cook,NYJ,RB,7
 20027,Dameon Pierce,HOU,RB,7
 20028,Damien Harris,BUF,RB,13
 20029,Darrell Henderson Jr.,FA,RB,0
@@ -117,27 +117,27 @@
 20041,Eno Benjamin,NO,RB,11
 20042,Eric Gray,NYG,RB,13
 20043,Evan Hull,IND,RB,11
-20044,Ezekiel Elliott,FA,RB,0
-20045,Gus Edwards ,BAL,RB,13
+20044,Ezekiel Elliott,NE,RB,11
+20045,Gus Edwards,BAL,RB,13
 20046,Hassan Hall,CLE,RB,5
 20047,Hassan Haskins,TEN,RB,7
 20048,Isaiah Spiller,LAC,RB,5
 20049,Isiah Pacheco,KC,RB,10
 20050,Israel Abanikanda,NYJ,RB,7
-20051,J.K. Dobbins ,BAL,RB,13
+20051,J.K. Dobbins,BAL,RB,13
 20052,Jahmyr Gibbs,DET,RB,9
 20053,Jamaal Williams,NO,RB,11
 20054,James Conner,ARZ,RB,14
 20055,James Cook,BUF,RB,13
 20056,James Robinson,NYG,RB,13
 20057,JaMycal Hasty,JAX,RB,9
-20058,Javonte Williams ,DEN,RB,9
+20058,Javonte Williams,DEN,RB,9
 20059,Jaylen Warren,PIT,RB,6
 20060,Jeff Wilson Jr.,MIA,RB,10
 20061,Jerick McKinnon,KC,RB,10
 20062,Jerome Ford,CLE,RB,5
 20063,Joe Mixon,CIN,RB,7
-20064,Jonathan Taylor ,IND,RB,11
+20064,Jonathan Taylor,IND,RB,11
 20065,Jordan Mason,SF,RB,9
 20066,Josh Jacobs,LV,RB,13
 20067,Joshua Kelley,LAC,RB,5
@@ -151,7 +151,7 @@
 20075,Kendre Miller,NO,RB,11
 20076,Kene Nwangwu,MIN,RB,13
 20077,Kenneth Gainwell,PHI,RB,10
-20078,Kenneth Walker III ,SEA,RB,5
+20078,Kenneth Walker III,SEA,RB,5
 20079,Kenny McIntosh,SEA,RB,5
 20080,Kenyan Drake,FA,RB,0
 20081,Kevin Harris,NE,RB,11
@@ -180,23 +180,23 @@
 20104,Roschon Johnson,CHI,RB,13
 20105,Samaje Perine,DEN,RB,9
 20106,Saquon Barkley,NYG,RB,13
-20107,Sean Tucker ,TB,RB,5
+20107,Sean Tucker,TB,RB,5
 20108,Tank Bigsby,JAX,RB,9
-20109,Tony Pollard ,DAL,RB,7
+20109,Tony Pollard,DAL,RB,7
 20110,Travis Etienne Jr.,JAX,RB,9
 20111,Travis Homer,CHI,RB,13
 20112,Trayveon Williams,CIN,RB,7
 20113,Trey Sermon,PHI,RB,10
 20114,Ty Chandler,MIN,RB,13
-20115,Ty Montgomery ,NE,RB,11
+20115,Ty Montgomery,NE,RB,11
 20116,Tyjae Spears,TEN,RB,7
 20117,Tyler Allgeier,ATL,RB,11
 20118,Tyler Goodson,GB,RB,6
 20119,Tyrion Davis-Price,SF,RB,9
 20120,Xazavian Valladay,HOU,RB,7
-20121,Zach Charbonnet ,SEA,RB,5
+20121,Zach Charbonnet,SEA,RB,5
 20122,Zach Evans,LAR,RB,10
-20123,Zack Moss ,IND,RB,11
+20123,Zack Moss,IND,RB,11
 20124,Zamir White,LV,RB,13
 20125,Zonovan Knight,NYJ,RB,7
 30001,A.J. Brown,PHI,WR,10
@@ -266,7 +266,7 @@
 30065,Justin Jefferson,MIN,WR,13
 30066,Justyn Ross,KC,WR,10
 30067,K.J. Osborn,MIN,WR,13
-30068,Kadarius Toney ,KC,WR,10
+30068,Kadarius Toney,KC,WR,10
 30069,Kalif Raymond,DET,WR,9
 30070,Keenan Allen,LAC,WR,5
 30071,Kendrick Bourne,NE,WR,11
@@ -296,13 +296,13 @@
 30095,Quez Watkins,PHI,WR,10
 30096,Rashee Rice,KC,WR,10
 30097,Rashid Shaheed,NO,WR,11
-30098,Rashod Bateman ,BAL,WR,13
+30098,Rashod Bateman,BAL,WR,13
 30099,Richie James Jr.,KC,WR,10
 30100,Robbie Chosen,MIA,WR,10
 30101,Robert Woods,HOU,WR,7
 30102,Romeo Doubs,GB,WR,6
 30103,Rondale Moore,ARZ,WR,14
-30104,Russell Gage ,TB,WR,5
+30104,Russell Gage,TB,WR,5
 30105,Skyy Moore,KC,WR,10
 30106,Stefon Diggs,BUF,WR,13
 30107,Sterling Shepard,NYG,WR,13
@@ -320,7 +320,7 @@
 30119,Tyquan Thornton,NE,WR,11
 30120,Tyreek Hill,MIA,WR,10
 30121,Van Jefferson,LAR,WR,10
-30122,Wan'Dale Robinson ,NYG,WR,13
+30122,Wan'Dale Robinson,NYG,WR,13
 30123,Xavier Hutchinson,HOU,WR,7
 30124,Zay Flowers,BAL,WR,13
 30125,Zay Jones,JAX,WR,9
@@ -359,7 +359,7 @@
 40033,Dawson Knox,BUF,TE,13
 40034,Taysom Hill,NO,TE,11
 40035,Isaiah Likely,BAL,TE,13
-40036,Zach Ertz ,ARZ,TE,14
+40036,Zach Ertz,ARZ,TE,14
 40037,Cole Turner,WAS,TE,14
 40038,Donald Parham Jr.,LAC,TE,5
 40039,Noah Gray,KC,TE,10
@@ -373,7 +373,7 @@
 40047,C.J. Uzomah,NYJ,TE,7
 40048,Adam Trautman,DEN,TE,9
 40049,Foster Moreau,NO,TE,11
-40050,Luke Schoonmaker ,DAL,TE,7
+40050,Luke Schoonmaker,DAL,TE,7
 40051,Jeremy Ruckert,NYJ,TE,7
 40052,Darnell Washington,PIT,TE,6
 40053,Harrison Bryant,CLE,TE,5
