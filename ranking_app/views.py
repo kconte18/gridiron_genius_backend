@@ -29,8 +29,8 @@ def refresh_players_db(request):
     try:
         services.update_players()
         return HttpResponse("Players Updated")
-    except:
-        return HttpResponseServerError("Error in update_players()")
+    except Exception as error:
+        return HttpResponseServerError(error)
     
 # VIEW FOR TESTING WITHOUT MESSING WITH DB
 def test(request):
