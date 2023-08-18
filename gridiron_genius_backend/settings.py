@@ -83,6 +83,7 @@ WSGI_APPLICATION = 'gridiron_genius_backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# MYSQL- PLANETSCALE
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django_psdb_engine',
@@ -95,12 +96,24 @@ WSGI_APPLICATION = 'gridiron_genius_backend.wsgi.application'
 #     }
 # }
 
+# MYSQL- GCP
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3'
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': env('DB_HOST'),
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PASSWORD'),
+        'NAME': env('DB_NAME'),
     }
 }
+
+# SQLITE- LOCAL
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3'
+#     }
+# }
 
 
 # Password validation
