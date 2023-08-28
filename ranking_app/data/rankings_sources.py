@@ -265,7 +265,7 @@ walters_sources = [
         'position_ranking_type': 'WR' 
     },
     {
-        'url': 'https://walterfootball.com/fantasycheatsheet/2023/traditional',
+        'url': 'https://debacled.walterfootball.com/fantasy/cheatsheet/traditional',
         'scoring_type': 'STANDARD',
         'position_ranking_type': 'TE' 
     },

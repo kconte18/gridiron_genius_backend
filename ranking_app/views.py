@@ -12,6 +12,8 @@ def get_rankings(request, score_type, position):
     try:
         rankings = services.get_rankings_by_score_and_position(score_type, position)
         rankings_json = json.dumps(rankings.data)
+        # with open("standard-te.json", "w") as outfile:
+        #     outfile.write(rankings_json)
         return HttpResponse(rankings_json, content_type='application/json')
     except Exception as error:
         return HttpResponseBadRequest(error)
