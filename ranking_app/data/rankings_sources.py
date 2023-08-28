@@ -225,42 +225,42 @@ thescore_sources = [
 
 walters_sources = [
     {
-        'url': 'https://walterfootball.com/fantasycheatsheet/2023/traditional',
+        'url': 'https://debacled.walterfootball.com/fantasy/cheatsheet/traditional',
         'scoring_type': 'STANDARD',
         'position_ranking_type': 'OVERALL' 
     },
     {
-        'url': 'https://walterfootball.com/fantasy/cheatsheet/ppr',
+        'url': 'https://debacled.walterfootball.com/fantasy/cheatsheet/ppr',
         'scoring_type': 'PPR',
         'position_ranking_type': 'OVERALL' 
     },
     {
-        'url': 'https://walterfootball.com/fantasycheatsheet/2023/traditional',
+        'url': 'https://debacled.walterfootball.com/fantasy/cheatsheet/traditional',
         'scoring_type': 'STANDARD',
         'position_ranking_type': 'QB' 
     },
     {
-        'url': 'https://walterfootball.com/fantasycheatsheet/2023/traditional',
+        'url': 'https://debacled.walterfootball.com/fantasy/cheatsheet/traditional',
         'scoring_type': 'PPR',
         'position_ranking_type': 'QB' 
     },
     {
-        'url': 'https://walterfootball.com/fantasycheatsheet/2023/traditional',
+        'url': 'https://debacled.walterfootball.com/fantasy/cheatsheet/traditional',
         'scoring_type': 'STANDARD',
         'position_ranking_type': 'RB' 
     },
     {
-        'url': 'https://walterfootball.com/fantasy/cheatsheet/ppr',
+        'url': 'https://debacled.walterfootball.com/fantasy/cheatsheet/ppr',
         'scoring_type': 'PPR',
         'position_ranking_type': 'RB' 
     },
     {
-        'url': 'https://walterfootball.com/fantasycheatsheet/2023/traditional',
+        'url': 'https://debacled.walterfootball.com/fantasy/cheatsheet/traditional',
         'scoring_type': 'STANDARD',
         'position_ranking_type': 'WR' 
     },
     {
-        'url': 'https://walterfootball.com/fantasy/cheatsheet/ppr',
+        'url': 'https://debacled.walterfootball.com/fantasy/cheatsheet/ppr',
         'scoring_type': 'PPR',
         'position_ranking_type': 'WR' 
     },
@@ -270,7 +270,7 @@ walters_sources = [
         'position_ranking_type': 'TE' 
     },
     {
-        'url': 'https://walterfootball.com/fantasy/cheatsheet/ppr',
+        'url': 'https://debacled.walterfootball.com/fantasy/cheatsheet/ppr',
         'scoring_type': 'PPR',
         'position_ranking_type': 'TE' 
     },

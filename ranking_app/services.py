@@ -69,4 +69,6 @@ def update_rankings_avg():
 
 # SERVICE FOR TESTING WITHOUT MESSING DB
 def test():
+    players_dict = Player.objects.all().values()
     print('test')
+    helpers.test(players_dict)

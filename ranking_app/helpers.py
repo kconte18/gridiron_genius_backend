@@ -128,5 +128,5 @@ def web_scrape(players_dict):
     else:
         return rankings
 
-def test():
+def test(players_dict):
     print('test')

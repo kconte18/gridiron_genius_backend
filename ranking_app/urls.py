@@ -9,5 +9,5 @@ urlpatterns = [
     path('refresh/players', views.refresh_players_db),
     # path('admin/login', admin.login)
     # URL FOR TESTING WITHOUT MESSING DB
-    path('testing/refresh/rankings/test', views.test)
+    path('test', views.test)
 ]
