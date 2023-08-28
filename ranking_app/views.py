@@ -16,7 +16,7 @@ def get_rankings(request, score_type, position):
     except Exception as error:
         return HttpResponseBadRequest(error)
 
-@staff_member_required   
+# @staff_member_required   
 def refresh_ranking_db(request):
     try:
         services.update_rankings()
@@ -24,7 +24,7 @@ def refresh_ranking_db(request):
     except Exception as error:
         return HttpResponseServerError(error)
 
-@staff_member_required 
+# @staff_member_required 
 def refresh_players_db(request):
     try:
         services.update_players()
